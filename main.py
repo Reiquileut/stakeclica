@@ -16,6 +16,7 @@ while True:
             img = '/home/ubuntu/PycharmProjects/stakeclica/stake.PNG'
 
             if pyautogui.locateOnScreen(img, confidence=0.8):
+
                 qdd = pyautogui.locateCenterOnScreen(img, confidence=0.8)
                 pyautogui.click(qdd.x, qdd.y)
 
