@@ -1,7 +1,11 @@
 import pyautogui
 import time
 
-# Define o horário de início e término
+from utils import buscaOperacao
+
+# Define o horário de início e término e constantes
+#img = '/home/ubuntu/PycharmProjects/stakeclica/src/stake.PNG'
+img = 'src/tests/imgBtnEnable.png'
 hora_inicio = 7  # 4 da manhã
 hora_termino = 23  # termina as 20 da noite
 
@@ -13,10 +17,9 @@ while True:
     # Verifica se está dentro do intervalo de tempo desejado
     if hora_inicio <= hora_atual < hora_termino:
         try:
-            img = '/home/ubuntu/PycharmProjects/stakeclica/stake.PNG'
-
+            print("VAI BUSCAR:" + str(time.time()))
             if pyautogui.locateOnScreen(img, confidence=0.8):
-
+                buscaOperacao()
                 qdd = pyautogui.locateCenterOnScreen(img, confidence=0.8)
                 pyautogui.click(qdd.x, qdd.y)
 
